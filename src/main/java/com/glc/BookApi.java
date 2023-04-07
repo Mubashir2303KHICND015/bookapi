@@ -7,10 +7,9 @@ public class BookApi {
     public static class Book {
         String title;
         String author;
-        String dateRead;
         int length;
         int year;
-        int rating;
+        
 
         public Book(String name,String auth,int leng,int ye){
             title = name;   
@@ -23,17 +22,6 @@ public class BookApi {
             return title;
         }
 
-        public int getRating(){
-            return rating;
-        }
-
-        public void setDateRead(String date){
-            dateRead = date;
-        }
-
-        public void setRating(int num){
-            rating = num;
-        }
     }
 
     public static class ReadingList{
@@ -54,6 +42,10 @@ public class BookApi {
                     break;
                 }
             }
+        }
+
+        public List<Book> getBook(){
+            return books;
         }
     }
 }

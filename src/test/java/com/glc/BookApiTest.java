@@ -3,6 +3,7 @@ package com.glc;
 import static org.junit.Assert.assertEquals;
 
 import java.beans.Transient;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -51,14 +52,17 @@ public class BookApiTest {
     public void removeBookTest (){
         //Setup
         ReadingList list = new ReadingList();
+        ReadingList list2 = new ReadingList();
         Book book = new Book("Martian","Davidoff",362,2004);
         Book book2 = new Book("Atomic Habbits","windi",305,2001);
         list.addBook(book, "Sep 1", 5);
         list.addBook(book2, "Sep 5", 4);
         list.removeBook("Martian");
+        list2.addBook(book2, "Sep 5", 4);
+        
         //Execute
-        int result = list.numberRead();
+        List<Book> result = list.getBook();
         //Assert
-        assertEquals(1, result);
+        assertEquals(list2.getBook(), result);
     }
 }
