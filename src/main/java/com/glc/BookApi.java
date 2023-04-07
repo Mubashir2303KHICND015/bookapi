@@ -46,5 +46,14 @@ public class BookApi {
         public void addBook(Book book,String dateRead, int rating){
             books.add(book);
         }
+
+        public void removeBook(String title){
+            for(Book book : books){
+                if(book.getTitle().equals(title)){
+                    books.remove(book);
+                    break;
+                }
+            }
+        }
     }
 }
