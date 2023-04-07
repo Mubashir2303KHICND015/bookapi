@@ -5,8 +5,10 @@ import static org.junit.Assert.assertEquals;
 import java.beans.Transient;
 
 import org.junit.Test;
+import com.glc.BookApi.ReadingList;
 
 public class BookApiTest {
+
     @Test
     public void emptyListTest (){
         //Setup
