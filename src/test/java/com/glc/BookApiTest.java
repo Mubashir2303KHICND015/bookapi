@@ -65,4 +65,18 @@ public class BookApiTest {
         //Assert
         assertEquals(list2.getBook(), result);
     }
+
+    @Test
+    public void Test5(){
+        //Setup
+        ReadingList list = new ReadingList();
+        ReadingList list2 = new ReadingList();
+        Book book = new Book("Abcd", "UBS", 10, 2023);
+        list.addBook(book, "Sep 1", 1);
+        list2.addBook(book, "Sep 1", 1);
+        //Execute
+        List<Book> result = list.getBook();
+        //Assert
+        assertEquals(list2.getBook(), result);
+    }
 }
