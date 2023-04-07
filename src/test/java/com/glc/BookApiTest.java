@@ -32,4 +32,18 @@ public class BookApiTest {
         //Assert
         assertEquals(1, result);
     }
+
+    @Test
+    public void multipleAdditionTest (){
+        //Setup
+        ReadingList list = new ReadingList();
+        Book book = new Book("Martian","Davidoff",362,2004);
+        Book book2 = new Book("Martian","Davidoff",362,2004);
+        list.addBook(book, "Sep 1", 5);
+        list.addBook(book2, "Sep 1", 5);
+        //Execute
+        int result = list.numberRead();
+        //Assert
+        assertEquals(2, result);
+    }
 }
