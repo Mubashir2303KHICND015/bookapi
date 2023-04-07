@@ -79,4 +79,23 @@ public class BookApiTest {
         //Assert
         assertEquals(list2.getBook(), result);
     }
+
+    @Test
+    public void testRatedBooksList (){
+        //Setup
+        ReadingList list = new ReadingList();
+        ReadingList list2 = new ReadingList();
+        Book book = new Book("Abcd", "UBS", 10, 2023);
+        Book book2 = new Book("efg", "Mubashir", 1, 2003);
+        Book book3 = new Book("hijk", "Fatima", 9, 2223);
+        list.addBook(book, "Sep 1", 1);
+        list.addBook(book2, "Sep 5", 5);
+        list.addBook(book3, "Sep 7", 5);
+        list2.addBook(book2, "Sep 5", 5);
+        list2.addBook(book3, "Sep 7", 5);
+        //Execute
+        List<Book> result = list.getBooksByRating(5);
+        //Assert
+        assertEquals(list2.getBook(), result);
+    }
 }
