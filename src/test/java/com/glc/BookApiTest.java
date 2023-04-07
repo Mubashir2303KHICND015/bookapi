@@ -18,4 +18,14 @@ public class BookApiTest {
         //Assert
         assertEquals(0, result);
     }
+
+    @Test
+    public void additionTest (){
+        //Setup
+        ReadingList list = new ReadingList();
+        //Execute
+        int result = list.numberRead();
+        //Assert
+        assertEquals(1, result);
+    }
 }
