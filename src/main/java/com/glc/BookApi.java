@@ -7,8 +7,11 @@ public class BookApi {
     public static class Book {
         String title;
         String author;
+        String dateRead;
         int length;
         int year;
+        int rating;
+       
         
 
         public Book(String name,String auth,int leng,int ye){
@@ -22,6 +25,20 @@ public class BookApi {
             return title;
         }
 
+        public void setDate(String date){
+            dateRead = date;
+        }
+
+        public void setRating(int ratingInput){
+            rating = ratingInput;
+        }
+
+        public int getRating(){
+            return rating;
+        }
+
+        
+
     }
 
     public static class ReadingList{
@@ -33,6 +50,8 @@ public class BookApi {
 
         public void addBook(Book book,String dateRead, int rating){
             books.add(book);
+            book.setDate(dateRead);
+            book.setRating(rating);
         }
 
         public void removeBook(String title){
@@ -47,5 +66,17 @@ public class BookApi {
         public List<Book> getBook(){
             return books;
         }
+
+        public List<Book> getBooksByRating(int rating){
+            List<Book> ratedBooks = new ArrayList<>();
+            for(Book book: books){
+                if(book.getRating() == rating){
+                    ratedBooks.add(book);
+                }
+            }
+            return ratedBooks;
+        }
     }
+
+   
 }
